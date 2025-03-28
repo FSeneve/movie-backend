@@ -9,5 +9,5 @@ import java.io.InputStream;
 public interface FileService {
     String upload(String path, MultipartFile file) throws IOException;
 
-    InputStream getResourceFile(String path) throws FileNotFoundException;
+    InputStream getResourceFile(String path, String fileName) throws FileNotFoundException;
 }
