@@ -15,13 +15,13 @@ public class FileServiceImpl implements FileService {
         String fileName = file.getOriginalFilename();
         String filePath = path + File.separator + fileName;
 
-        File f = new File(filePath);
+        File f = new File(path);
 
         if(!f.exists()) {
             f.mkdir();
         }
 
-        Files.copy(file.getInputStream(), Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(file.getInputStream(), Paths.get(filePath));
         return fileName;
     }
 
